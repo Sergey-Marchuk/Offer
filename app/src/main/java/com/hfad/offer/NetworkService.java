@@ -8,6 +8,7 @@ public class NetworkService {
     private static NetworkService sInstance;
     public Retrofit retrofit;
 
+    //Here will be base URL for Asure service
     private static final String BASE_URL = "https://jsonplaceholder.typicode.com";
 
     private NetworkService(){
