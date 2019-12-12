@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
     private RecyclerView recyclerView;
     //rename this variable, because you use syntax in project without m prefix
+    //Remove fied mPhoto, better to use local variable 
     private ArrayList<Photo> mPhoto = new ArrayList<>();
 
     @Override
@@ -114,6 +115,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     @Override
     public Loader<Cursor> onCreateLoader(int id, @Nullable Bundle args) {
         Uri uri = MediaStore.Images.Media.EXTERNAL_CONTENT_URI;
+        //Remove 'MediaStore.Images.Media.DATE_ADDED' from projection
         String[] projection = {MediaStore.Images.Media.DATA, MediaStore.Images.Media.DATE_ADDED};
         String sortOrder = MediaStore.Images.Media.DATE_ADDED + " DESC";
         return new CursorLoader(this, uri, projection, null,
